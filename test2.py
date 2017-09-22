@@ -52,6 +52,8 @@ assert resp.code == 200
 
 @app.route('/redirect', methods=['POST'])
 def redirect():
+    #zip =
+    #API_RESOURCE_URL = API_RESOURCE_URL +
     return resp.read()
 
 @app.route('/')
