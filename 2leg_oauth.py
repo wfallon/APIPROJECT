@@ -5,10 +5,12 @@ import time #Unix timestamp import oauth2
 
 
 
+get_nonce = lambda: str(str(random.getrandbits(64)) + str(get_timestamp()))
+
 def build_request(url, method):
     params = {
         'oauth_version': "1.0",
-        'oauth_nonce': "kllo9940pd9333jh",
+        'oauth_nonce': get_nonce,
         'oauth_timestamp': int(time.time()),
         'oauth_token': "",
         'oauth_signature_method': "PLAINTEXT"
@@ -20,6 +22,7 @@ def build_request(url, method):
     req.sign_request(signature_method, consumer, None)
     return req
 #end build_request
+
 
 
 resourceUrl = 'https://api.schoology.com/v1/courses/'
