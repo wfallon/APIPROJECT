@@ -49,13 +49,6 @@ params_confirmed_access_token = [
 signature = get_sign(params_confirmed_access_token, API_RESOURCE_URL, "GET")
 params_confirmed_access_token.append(('oauth_signature', signature))
 
-# GET https://api.bitbucket.org/1.0/repositories/lexev/tutorial/?
-#    oauth_consumer_key=your_app_key&
-#    oauth_nonce=165399630806490086601427390977&
-#    oauth_signature_method=HMAC-SHA1&
-#    oauth_timestamp=1427390977&
-#    oauth_version=1.0&
-#    oauth_signature=aK%2BkRS5B%2BoFzXjMcQ%2FBtTMMELYk%3D
 url = "?".join((API_RESOURCE_URL, urlencode(params_confirmed_access_token)))
 resp = urllib2.urlopen(url)
 assert resp.code == 200
