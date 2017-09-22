@@ -8,7 +8,7 @@ import time #Unix timestamp import oauth2
 def build_request(url, method):
     params = {
         'oauth_version': "1.0",
-        'oauth_nonce': oauth2.generate_nonce(),
+        'oauth_nonce': "kllo9940pd9333jh",
         'oauth_timestamp': int(time.time()),
         'oauth_token': "",
         'oauth_signature_method': "PLAINTEXT"
