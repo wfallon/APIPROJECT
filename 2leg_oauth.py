@@ -9,7 +9,9 @@ def build_request(url, method):
     params = {
         'oauth_version': "1.0",
         'oauth_nonce': oauth2.generate_nonce(),
-        'oauth_timestamp': int(time.time())
+        'oauth_timestamp': int(time.time()),
+        'oauth_token=""',
+        'oauth_signature_method="PLAINTEXT"'
     }
     consumer = oauth2.Consumer(key='54fae896b065003ecf321fa9cbc90624059c127dc',secret='ac1e375ea2b80491d218cb4a8014c3c3')
     params['oauth_consumer_key'] = consumer.key
